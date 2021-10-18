@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinFin</title>
+</head>
+<body>
+  <section class="form">
+    <div class="form__colculates">
+      <h2 class="form__title">Рассчитать стоимость окон</h2>
+      <form action="#" class="calculate">
+        <div class="calculate__order">
+          <div class="calculate__select-type">
+            <label class="calculate__select-title" for="type-winsow">Выберите тип окна</label>
+            <select class="calculate__select" name="select-type-window" id="type-winsow">
+              <option value="Деревянные">Деревянные</option>
+              <option value="Металлические">Металлические</option>
+            </select>
+          </div>
+          <div class="calculate__select-type">
+            <label class="calculate__select-title" for="type-packet">Выберите тип пакета</label>
+            <select class="calculate__select" name="select-type-packet" id="type-packet">
+              <option value="Однокамерный + Стекло">Однокамерный + Стекло</option>
+              <option value="Двухкамерный + Стекло">Двухкамерный + Стекло</option>
+            </select>            
+          </div>
+          <p class="calculate__list-tree-title">Выберите тип дерева</p>
+          <ul class="calculate__list-tree">
+            <li class="calculate__list-tree-item">
+              <input type="radio" value="Сосна" id="pine" class="calculate__list-tree-radio visually-hidden" name="tree-type">
+              <label for="pine" class="calculate__list-tree-label">
+                <img src="img/pine.png" class="calculate__list-tree-img" alt="pine">
+                <span>Сосна</span>
+              </label>
+            </li>
+            <li class="calculate__list-tree-item">
+              <input type="radio" value="Лиственница" id="larch" class="calculate__list-tree-radio visually-hidden" name="tree-type">
+              <label for="larch" class="calculate__list-tree-label">
+                <img src="img/larch.png" class="calculate__list-tree-img" alt="larch">
+                <span>Лиственница</span>
+              </label>
+            </li>
+            <li class="calculate__list-tree-item">
+              <input type="radio" value="Дуб" id="oak" class="calculate__list-tree-radio visually-hidden" name="tree-type">
+              <label for="oak" class="calculate__list-tree-label">
+                <img src="img/oak.png" class="calculate__list-tree-img" alt="oak">
+                <span>Дуб</span>
+              </label>
+            </li>
+            <li class="calculate__list-tree-item">
+              <input type="radio" value="Меранти" id="meranti" class="calculate__list-tree-radio visually-hidden" name="tree-type">
+              <label for="meranti" class="calculate__list-tree-label">
+                <img src="img/meranti.png" class="calculate__list-tree-img" alt="meranti">
+                <span>Меранти</span>
+              </label>
+            </li>
+          </ul>
+          <p class="calculate__list-add-title">Дополнительные элементы</p>
+          <ul class="calculate__list-add">
+            <li class="calculate__list-add-point">
+              <input id="lowtide" value="Отлив" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="lowtide">
+                Отлив
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация отливом">?</span>
+              </label>
+            </li>
+            <li class="calculate__list-add-point"> 
+              <input id="foldmech" value="Откидной механизм" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="foldmech">
+                Откидной механизм
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация откидным механизмом">?</span>
+              </label>
+            </li>
+            <li class="calculate__list-add-point">
+              <input id="kidclose" value="Детский замок" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="kidclose">
+                Детский замок
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация детским замком">?</span>
+              </label>
+            </li>
+            <li class="calculate__list-add-point">
+              <input id="threshold" value="Подоконник/Порог" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="threshold">
+                Подоконник/Порог
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация подоконником / порогом">?</span>
+              </label>
+            </li>
+            <li class="calculate__list-add-point">
+              <input id="energysave" value="Энергосберегающий" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="energysave">
+                Энергосберегающий
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация c защитой от потери тепла">?</span>
+              </label>
+            </li>
+            <li class="calculate__list-add-point">
+              <input id="mounting" value="Монтаж" type="checkbox" name="add-options" class="calculate__list-add-check visually-hidden">
+              <label class="calculate__list-add-label" for="mounting">
+                Монтаж
+                <span class="calculate__list-add-prompt" data-explanation="Комплектация с монтажом">?</span>
+              </label>
+            </li>
+          </ul>
+          <button class="calculate__button-green">
+            <span class="calculate__text-button">оформить заказ</span>
+          </button>
+        </div>
+
+        <div class="calculate__price">
+          <p class="calculate__contruction-title">Тип конструкции</p>
+          <ul class="calculate__contruction-list">
+            <li class="calculate__contruction-list-point">
+              <input id="one-window" value="one-window" type="radio" name="contruction-list" class="construction-list__type-radio visually-hidden">
+              <label for="one-window" class="construction-list__type-label">
+                <img src="img/one-window.png" alt="one-window" width="26" height="34">
+              </label>
+            </li>
+            <li class="calculate__contruction-list-point">
+              <input id="two-window" value="two-window" type="radio" name="contruction-list" class="construction-list__type-radio visually-hidden">
+              <label for="two-window" class="construction-list__type-label">
+                <img src="img/two-window.png" alt="two-window">
+              </label>
+            </li>
+            <li class="calculate__contruction-list-point">
+              <input id="three-window" value="three-window" type="radio" name="contruction-list" class="construction-list__type-radio visually-hidden">
+              <label for="three-window" class="construction-list__type-label">
+                <img src="img/three-window.png" alt="three-window">
+              </label>
+            </li>
+            <li class="calculate__contruction-list-point">
+              <input id="arch" value="arch" type="radio" name="contruction-list" class="construction-list__type-radio visually-hidden">
+              <label for="arch" class="construction-list__type-label">
+                <img src="img/arch.png" alt="arch" >
+              </label>
+            </li>
+          </ul>
+          <div class="calculate__window">
+            <div class="calculate__window-height">
+              <input type="text" id="window-height" class="calculate__window-height-write">
+              <label for="window-height">Высота</label>
+            </div>
+            <div class="calculate__window-img">
+              <img src="img/big-window.png" alt="big-window">
+              <div class="calculate__window-width">
+                <label for="window-width">Ширина</label>
+                <input type="text" id="window-width" class="calculate__window-width-write">
+              </div>
+            </div>
+          </div>
+          <div class="calculate__result">
+            <p class="calculate__result-title">Стоимость окна</p>
+            <span class="calculate__result-price">13 632 р.</span>
+            <p class="calculate__result-text">Обращаем Ваше внимание, что данный расчет является приблизительным. Наш менеджер сообщит Вам точную стоимость после уточнения информации.</p>
+            <p class="calculate__result-text">Нажимая кнопку “Оформить заказ”, Вы принимаете <a href="#" class="calculate__result-link">политику конфиденциальности</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="form__call">
+      <h3 class="form__call-title">Вызвать специалиста на замер</h3>
+      <div class="call__about-employee">
+        <img src="img/employee.png" alt="employee" class="about-employee__img" width="178" height="178">
+        <div class="about-employee__info">
+          <p class="about-employee__name">Василий Петрович</p>
+          <p class="about-employee__place">менеджер компании WinFin</p>
+          <p class="about-employee__experiance">Опыт работы в компании WinFin более 10 лет</p>
+        </div>
+      </div>
+      <form action="#" class="call__form">
+        <p class="call__title">Возможен выезд в день обращения</p>
+        <input type="tel" class="call__write-tel" placeholder="Тел.">
+        <textarea name="comment" class="call__write-text" placeholder="Комментарий"></textarea>
+        <button type="submit" class="call__button">
+          <span>Вызвать на замер</span>
+        </button>
+      </form>
+      <img src="img/ruletka.png" alt="ruletka" class="call__img" width="62" height="459">
+    </div>
+  </section>
+</body>
+</html>
